@@ -1,7 +1,8 @@
-#include "init.h"
-#include "macro.h"
-#include "error.h"
-#include "security.h"
+#include "src/include/init.h"
+#include "src/include/macro.h"
+#include "src/include/error.h"
+#include "src/include/security.h"
+#include "src/include/printText.h"
 
 
 
@@ -25,9 +26,9 @@ int main(int argc, char const *argv[])
     }
     
     if(initClinet(&sock, argv[1])){
-        printConnection(AUTH);
+        printConnection(AUTH_SERVER);
     }
 
-    
+
     return 0;
 }

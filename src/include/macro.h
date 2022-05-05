@@ -19,5 +19,5 @@
 
 #define FILE_SIZE 1000000
 
-#define AUTH 1
-#define FILE 2
+#define AUTH_SERVER 1
+#define FILE_SERVER 2

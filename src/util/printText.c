@@ -1,14 +1,14 @@
-#include "printText.h"
-#include "macro.h"
+#include "../include/printText.h"
+#include "../include/macro.h"
 
 
 void printConnection(int flag){
-    if(flag == AUTH){
+    if(flag == AUTH_SERVER){
         puts("==================================================");
         puts("\tConnected to Authentication server\t");
         puts("==================================================");
     }
-    if(flag== FILE){
+    if(flag== FILE_SERVER){
         puts("==================================================");
         puts("\tConnected to File server\t");
         puts("==================================================");
@@ -17,12 +17,12 @@ void printConnection(int flag){
 }
 
 void printDisconnection(int flag){
-    if(flag == AUTH){
+    if(flag == AUTH_SERVER){
         puts("==================================================");
         puts("\tDisonnected to Authentication server\t");
         puts("==================================================");
     }
-    if(flag == FILE){
+    if(flag == FILE_SERVER){
         puts("==================================================");
         puts("\tDisonnected to File server\t");
         puts("==================================================");

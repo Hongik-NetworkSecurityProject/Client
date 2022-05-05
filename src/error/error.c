@@ -1,4 +1,4 @@
-#include "error.h"
+#include "../include/error.h"
 
 
 void errorHandling(int errorType){
@@ -27,5 +27,5 @@ void errorHandling(int errorType){
         default:
             break;
         }
-    assert(0);
+    exit(1);
 }
