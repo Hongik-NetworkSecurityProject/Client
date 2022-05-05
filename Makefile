@@ -4,8 +4,8 @@ LIB_PATH = ./library
 
 all : application
 
-application : application.o error.o init.o printText.o
-	gcc -o application application.o error.o init.o printText.o -I${HEADER_PATH} 
+application : application.o error.o init.o printText.o phase.o
+	gcc -o application application.o error.o init.o printText.o phase.o -I${HEADER_PATH} 
 
 application.o: 
 	gcc -c -o application.o application.c -I${HEADER_PATH} 
@@ -18,6 +18,9 @@ init.o:
 
 printText.o:
 	gcc -c -o printText.o ./src/util/printText.c
+
+phase.o:
+	gcc -c -o phase.o ./src/ui/phase.c -I${HEADER_PATH} 
 
 # printText.o:
 # 	gcc -c -o printText.o printText.c
