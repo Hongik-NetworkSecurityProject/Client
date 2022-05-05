@@ -1,7 +1,7 @@
 #include "src/include/init.h"
 #include "src/include/macro.h"
 #include "src/include/error.h"
-#include "src/include/security.h"
+#include "src/include/phase.h"
 #include "src/include/printText.h"
 
 
@@ -16,7 +16,7 @@ int main(int argc, char const *argv[])
     u_int8_t initialVector[AES_BLOCK_SIZE];
     u_int8_t token[TOKEN_SIZE];
 
-    int requestMessageSize = sizeof("I need a Token");
+    int requestMessageSize = sizeof(REQUEST_MESSAGE);
     Certificate *certificate  = NULL;
 
     if (argc != 4)
@@ -28,6 +28,9 @@ int main(int argc, char const *argv[])
     if(initClinet(&sock, argv[1])){
         printConnection(AUTH_SERVER);
     }
+
+    phase1SendRequestMessage(&sock, REQUEST_MESSAGE, requestMessageSize);
+
 
 
     return 0;
